@@ -31,3 +31,23 @@
 #pragma comment(lib, "SceneQuery.lib")
 #pragma comment(lib, "SimulationController.lib")
 #endif
+
+#ifdef _DEBUG
+#pragma comment(lib, "APEX_ClothingDEBUG_x64.lib")
+#pragma comment(lib, "APEX_DestructibleDEBUG_x64.lib")
+#pragma comment(lib, "APEX_EmitterDEBUG.lib")
+#pragma comment(lib, "APEX_LegacyDEBUG_x64.lib")
+#pragma comment(lib, "APEX_LoaderDEBUG_x64.lib")
+#pragma comment(lib, "ApexCommonDEBUG.lib")
+#pragma comment(lib, "ApexFrameworkDEBUG_x64.lib")
+#pragma comment(lib, "ApexSharedDEBUG.lib")
+#else
+#pragma comment(lib, "APEX_Clothing_x64.lib")
+#pragma comment(lib, "APEX_Destructible_x64.lib")
+#pragma comment(lib, "APEX_Emitter.lib")
+#pragma comment(lib, "APEX_Legacy_x64.lib")
+#pragma comment(lib, "APEX_Loader_x64.lib")
+#pragma comment(lib, "ApexCommon.lib")
+#pragma comment(lib, "ApexFramework_x64.lib")
+#pragma comment(lib, "ApexShared.lib")
+#endif

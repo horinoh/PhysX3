@@ -20,3 +20,9 @@ setx PHYSX_SDK_PATH "...\PhysX-3.3\PhysXSDK"
 setx APEX_SDK_PATH "...\PhysX-3.3\APEXSDK"
 ~~~
 
+* システム環境変数 PATH に DLL のパスを通しておく (管理者として実行)
+~~~
+setx /M PATH "%PATH%;%PHYSX_SDK_PATH%\Bin\vc14win64"
+setx /M PATH "%PATH%;%APEX_SDK_PATH%\bin\vc14win64-PhysX_3.3"
+~~~
+
