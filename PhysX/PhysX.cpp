@@ -4,6 +4,11 @@
 #include "stdafx.h"
 #include "PhysX.h"
 
+#pragma region AddCode
+#include "PX.h"
+PX* Px = nullptr;
+#pragma endregion
+
 #define MAX_LOADSTRING 100
 
 // Global Variables:
@@ -142,6 +147,26 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             }
         }
         break;
+
+#pragma region AddCode
+	case WM_CREATE:
+		{
+			Px = new AX();
+			if (nullptr != Px) {
+				Px->OnCreate(hWnd);
+			}
+			SetTimer(hWnd, WM_TIMER, 1000 / 60, 0);
+		}
+		break;
+	case WM_TIMER:
+		{
+			if (nullptr != Px) {
+				Px->OnTimer(hWnd);
+			}
+		}
+		break;
+#pragma endregion
+
     case WM_PAINT:
         {
             PAINTSTRUCT ps;
@@ -151,6 +176,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
     case WM_DESTROY:
+#pragma region AddCode
+		if (nullptr != Px) {
+			Px->OnDestroy(hWnd);
+		}
+#pragma endregion
         PostQuitMessage(0);
         break;
     default:
